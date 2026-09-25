@@ -402,9 +402,13 @@ derivation discipline as it evolves. Otherwise, later invariants could cease to
 be valid consequences of the accepted premises, and the specification would
 lose the coherent closure that this discipline requires.
 
-This statement is narrow. It does not decide the open question of whether Ring
-governs its own repository (`ring-spec.md` §3), and it derives no general
-self-hosting or self-governance architecture.
+This development-methodology requirement is distinct from the product-level
+self-governance now established by `ring-spec.md` §0.11.
+
+Section 0.11 establishes that Ring must be able to govern the evolution of its
+own repository. This methodology document still does not derive or select any
+bootstrap, self-hosting, versioning, trust, verification, migration, or
+implementation mechanism for doing so.
 
 ## 12. Product boundary note (non-normative)
 
