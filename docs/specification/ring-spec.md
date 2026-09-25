@@ -194,6 +194,31 @@ Conversely, conformance is not established by immutability, by documentation
 volume, or by the presence of any particular artifact. The requirement is
 controlled, explainable evolution relative to accepted authority.
 
+## 0.11 Ring must be able to govern its own evolution
+
+The product guarantees established by Ring MUST be applicable to the evolution
+of the Ring repository itself.
+
+Ring must therefore be able to reach a state in which changes to its own
+governed meaning are subject to the same requirements for accepted authority,
+applicable obligations, admissibility, provenance, and mechanically governable
+conformance that Ring requires of another governed repository.
+
+This self-application does not make Ring the authority entitled to choose or
+change its own Product Intent or other governed meaning. Those changes still
+require the accepted authority entitled to establish them.
+
+Self-application also does not make a Ring assertion, implementation, validator,
+or other Ring-owned mechanism sufficient evidence of its own correctness merely
+because it belongs to Ring. Any evidence relied upon must have the authority,
+scope, and independence actually required by the obligation it supports.
+
+This Product Intent requires eventual self-governance.
+
+It does not select the bootstrap path, versioning model, trust root,
+verification arrangement, software architecture, or implementation mechanism by
+which that state is reached.
+
 # 1. Purpose, scope, and normative precedence
 
 This document establishes Ring's initial Product Intent (§0) and only the
@@ -287,7 +312,8 @@ what durable evidence is required for different classes of change
 the relationship between Ring and any version-control, hosting,
   continuous-integration, or project-management system
 any file format, schema, API, package structure, language, or repository layout
-whether and how Ring is applied to its own repository
+how Ring's required self-application to its own repository is bootstrapped and
+  realized, including any versioning, trust, verification, or migration boundary
 whether any mechanism from related or prior experiments is useful
 ```
 
