@@ -259,7 +259,7 @@ Does this derived normative statement necessarily follow
 from the accepted applicable premises?
 
 JOINT CONSISTENCY
-Can all simultaneously applicable invariants hold together?
+Can all simultaneously applicable normative statements hold together?
 
 CLOSURE COHERENCE
 Have all materially relevant necessary consequences been accounted for,
@@ -289,14 +289,15 @@ For the purposes of this section, in addition to the terms already defined in
   evaluated.
 - **Applicability**: the conditions under which a normative statement is in
   force for a given context. A statement is applicable in a context when the
-  context satisfies those conditions.
+  context satisfies those conditions, whether or not the statement's own
+  requirement is satisfied.
 - **Applicable accepted premises**: the accepted premises that are in force for
   a given context.
-- **Admissible context**: a context that satisfies the applicability conditions
-  of all accepted premises and normative statements under consideration, so
-  that those statements are simultaneously in force. This is a contextual
-  sense, distinct from the relational admissibility of repository states
-  defined in §2.
+- **Applicability context**: a context considered for the purpose of
+  determining which accepted normative statements are simultaneously in force.
+  It identifies the applicable statements; it does not presuppose that their
+  substantive requirements are jointly satisfiable. This sense is distinct
+  from the relational admissibility of repository states defined in §2.
 - **Necessary consequence**: a statement that holds in every logically possible
   realization satisfying the accepted premises it depends on.
 - **Derivation closure**: the accepted premises together with the necessary
@@ -382,28 +383,39 @@ reasoning requires it.
 
 ## 1.4 Joint consistency
 
-For every admissible context C, the set of Ring invariants applicable in C MUST
-admit at least one state or transition that satisfies them jointly:
+The joint consistency domain is the full set of applicable accepted premises,
+not only derived invariants. It therefore includes validly accepted non-derived
+premises such as semantic decisions and applicability conditions, as well as
+validly derived statements such as invariants and obligations.
+
+For every applicability context C, the applicable accepted premises MUST admit
+at least one logically possible state or transition that satisfies them
+jointly:
 
 ```text
-applicable_invariants(C) must admit at least one state or transition
-that satisfies them jointly
+applicable_accepted_premises(C)
+→ jointly satisfiable
 ```
 
-Applicability is evaluated relative to the applicable accepted premises (§1.1),
-not relative to derived invariants alone.
+Applicability determines which accepted premises are in force in a context.
+Joint satisfiability determines whether those simultaneously applicable
+premises can all be satisfied together. An applicability context does not
+presuppose that the substantive requirements of the applicable premises are
+jointly satisfiable. Joint consistency of a set is not established by the valid
+acceptance of its non-derived premises individually, nor by the valid
+derivation of its derived statements individually.
 
-It is NOT required that every invariant be compatible with every other
-invariant. Invariants may have mutually exclusive scopes or applicability
-conditions. Explicit supersession and mutually exclusive scope do not by
-themselves constitute inconsistency. In particular, if `INV-A` requires `X`
-and `INV-B` forbids `X`, the specification is inconsistent only when `INV-A`
-and `INV-B` can apply simultaneously.
+It is NOT required that every accepted premise be compatible with every other
+accepted premise. Accepted premises may have mutually exclusive scopes or
+applicability conditions. Explicit supersession and mutually exclusive scope do
+not by themselves constitute inconsistency. In particular, if `S1` requires `X`
+and `S2` forbids `X`, the specification is inconsistent only when `S1` and `S2`
+can apply simultaneously.
 
-A specification state is invalid if simultaneously applicable Ring invariants
+A specification state is invalid if simultaneously applicable accepted premises
 require mutually impossible outcomes. Joint consistency is therefore a property
-of each admissible simultaneously applicable set of invariants, not of
-arbitrary invariant pairs.
+of each set of simultaneously applicable accepted premises, not of arbitrary
+pairs of accepted premises.
 
 ## 1.5 Closure coherence
 
