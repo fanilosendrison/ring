@@ -15,8 +15,9 @@ freely, including changing its own accepted decisions and obligations, without
 silently drifting from the authorities, decisions, obligations, and
 representations that govern its current state.
 
-This repository currently contains only Ring's initial Product Intent
-specification. Ring is developed specification-first:
+This repository currently contains Ring's initial Product Intent
+specification together with the development methodology used to derive and
+maintain it. Ring is developed specification-first:
 
 ```text
 Product Intent
