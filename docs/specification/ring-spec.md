@@ -9,24 +9,8 @@
 # 0. Product intent — governing user experience
 
 This section is normative for Ring's product direction. It states the product
-outcome that later derivation exists to serve. Section 2 defines the working
-sense of the terms used here, including authority, obligation, representation,
-admissible, provenance, and drift.
-
-The derivation discipline for everything that follows this document is:
-
-```text
-Product Intent
-→ necessary invariants
-→ obligations
-→ architecture
-→ mechanisms
-```
-
-A later design is conforming only if it preserves the Product Intent and the
-invariants eventually derived from it. A change that weakens a guarantee stated
-here MUST be an explicit, attributable revision of this section, not a side
-effect of implementation constraints or accumulated conventions.
+outcome. Section 2 defines the working sense of the terms used here, including
+authority, obligation, representation, admissible, provenance, and drift.
 
 ## 0.1 Product definition
 
@@ -227,8 +211,10 @@ Those are deliberate later derivations, not omissions to be filled by
 assumption.
 
 Product Intent precedes invariant derivation and architecture. A later Ring
-requirement must not silently redefine Product Intent. A Product Intent change
-must be explicit and attributable.
+requirement MUST NOT silently redefine Product Intent. A Product Intent
+guarantee MUST NOT disappear or weaken as an accidental consequence of
+implementation, architecture, convention, or later derivation. A Product
+Intent change MUST be an explicit, attributable accepted revision.
 
 The substantive Ring invariant set remains to be derived from the Product
 Intent. The methodology used to derive and maintain this specification is
