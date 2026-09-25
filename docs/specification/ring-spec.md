@@ -113,8 +113,8 @@ representation drift
 
 process / obligation drift
   The obligations that applied to a transition, or the process by which they
-  were discharged, can no longer be determined from the repository, or current
-  practice silently diverges from the applicable obligation set.
+  were discharged, can no longer be determined, or current practice silently
+  diverges from the applicable obligation set.
 ```
 
 ## 0.5 Continuity of authority and explainability
@@ -145,7 +145,11 @@ proof system, or formal model.
 
 ## 0.7 Questions Ring must ultimately make answerable
 
-Ring SHOULD ultimately make it possible to answer questions such as:
+These questions are a non-exhaustive rendering of the determinability that §0.1
+already requires. They introduce no independent normative requirement. The
+normative statement remains §0.1, and this section only illustrates the shape of
+the required explainability; it does not restate that requirement more weakly.
+Ring must ultimately make it possible to answer questions such as:
 
 ```text
 Why is the repository in this state?
@@ -187,10 +191,12 @@ a project / task manager
 a requirement that every repository use the same governance structure
 ```
 
-Ring does not own a repository's product semantics. The repository itself
-remains authoritative for its own intent, decisions, obligations, and
-representations. Ring's concern is the integrity of that authority and of
-repository evolution relative to it.
+Ring does not own a governed project's product semantics and does not determine
+which actors, roles, policies, decisions, or other accepted sources are entitled
+to change them. Those authorities remain outside Ring's authority and are
+established by the governed project's own accepted authority model. Ring's
+concern is the integrity of repository evolution relative to that accepted
+authority.
 
 ## 0.10 Product-intent conformance rule
 
@@ -233,9 +239,11 @@ specification.
 These definitions exist only to make Section 0 unambiguous. They are conceptual
 and do not select a representation, artifact, tool, process, or system.
 
-- **Repository**: the evolving body of content whose change a project treats as
-  governed, including its product intent, decisions, obligations,
-  representations, and implementation.
+- **Repository**: the software repository whose evolution is being governed.
+  Information that governs that evolution, including authority, decisions,
+  obligations, and representations, may be represented inside or outside the
+  repository; where it resides and how it is represented are not determined by
+  this Product Intent.
 - **Governed meaning**: the part of repository content whose change requires
   accepted authority and an explanation of why the resulting state is
   admissible, rather than merely occurring as a side effect of activity.
@@ -276,7 +284,7 @@ the invariant set and obligation catalog derived from the Product Intent
 Ring's architecture, component boundaries, and responsibility split
 whether Ring is realized as software, a process, a role, a convention set,
   or a combination of these
-how authority is represented, recorded, or discovered in a repository
+how authority is represented, recorded, or discovered
 how decisions are recorded, amended, superseded, or withdrawn, and whether
   any particular decision-record artifact exists
 how obligations are expressed, bound to repository state or transitions, and
