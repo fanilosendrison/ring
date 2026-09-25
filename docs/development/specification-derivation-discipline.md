@@ -31,10 +31,20 @@ admitted into the normative specification.
 ## 1. Status and scope
 
 Ring is developed specification-first: normative product meaning precedes
-invariant derivation, architecture, and mechanism selection. The Product Intent
-in `ring-spec.md` §0 is the governing product-level premise. Everything
-developed later must remain a valid consequence of it or of premises validly
-accepted consistently with it; nothing later may silently redefine it.
+invariant derivation, architecture, and mechanism selection:
+
+```text
+Product Intent
+→ necessary invariants
+→ obligations
+→ architecture
+→ mechanisms
+```
+
+The Product Intent in `ring-spec.md` §0 is the governing product-level
+premise. Everything developed later must remain a valid consequence of it or
+of premises validly accepted consistently with it; nothing later may silently
+redefine it.
 
 This document records the discipline under which Ring's specification corpus —
 the Product Intent, accepted semantic decisions, applicability conditions,
@@ -472,23 +482,70 @@ normative Ring specification, and the statuses above are a working distinction
 rather than adopted Ring vocabulary. It must not be installed as a Ring
 invariant by this document.
 
-## 14. Candidate consequences to test against Product Intent
+## 14. Product requirements versus candidate derived responsibilities
 
-The following were identified during the same review as plausible Ring
-responsibilities. They are recorded here only as an explicitly non-normative
-candidate list. They are not accepted Ring invariants, and listing them here is
-not acceptance, derivation, or validation.
+Specification-review material falls into two categories that must not be
+conflated:
+
+```text
+Product Intent requirements
+→ already authoritative product premises
+
+Candidate derived responsibilities
+→ possible consequences of those premises,
+   not yet accepted Ring invariants
+```
+
+### 14.1 Product-level requirements already established by §0
+
+The following are already normative at Product Intent level. They are product
+premises, not candidates. Being already normative at Product Intent level is
+NOT the same as being a substantive derived invariant already known: their
+lower-level consequences, obligations, and mechanisms still require derivation.
 
 ```text
 authority continuity
-explicit normative change
+→ §0.5
+
+explicit governed change
+→ §0.3 / §0.10
+
 applicability determinability
+→ §0.1
+
 durable provenance
+→ §0.1 / §0.8
+
+transition admissibility / explainability
+→ §0.1 / §0.6
+```
+
+The next derivation phase does not re-test whether these Product Intent
+requirements exist. It derives what lower-level properties are necessary to
+satisfy them.
+
+Example:
+
+```text
+Product Intent already requires durable provenance.
+
+Open derivation question:
+what invariants, obligations, or mechanisms are necessarily required
+for durable provenance to hold?
+```
+
+### 14.2 Candidate derived responsibilities requiring derivation
+
+The following remain candidates only. They are recorded as an explicitly
+non-normative list. They are not accepted Ring invariants, and listing them here
+is not acceptance, derivation, or validation. Their presence in this document
+MUST NOT count as acceptance.
+
+```text
 known dependency invalidation
 staleness visibility
 contradiction visibility
 evidence/status integrity
-transition admissibility
 conceptual coherence status
 ```
 
