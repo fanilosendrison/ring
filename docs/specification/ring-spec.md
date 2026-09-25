@@ -1,10 +1,12 @@
 # Ring — Requirements, Invariants, and Architectural Implications
 
-> Initial product specification for Ring. It establishes the Product Intent and
-> only those immediate semantic clarifications needed to prevent
-> misinterpretation. Invariants, obligations, architecture, and mechanisms are
-> deliberately left to later derivation. No implementation mechanism is selected
-> or presupposed by this document.
+> Initial product specification for Ring. It establishes the Product Intent, the
+> derivation-integrity discipline under which future Ring invariants and their
+> necessary consequences must be derived and maintained, and only those
+> immediate semantic clarifications needed to prevent misinterpretation. The
+> Ring invariant set, obligations, architecture, and mechanisms are deliberately
+> left to later derivation. No implementation mechanism is selected or
+> presupposed by this document.
 
 # 0. Product intent — governing user experience
 
@@ -210,7 +212,7 @@ Conversely, conformance is not established by immutability, by documentation
 volume, or by the presence of any particular artifact. The requirement is
 controlled, explainable evolution relative to accepted authority.
 
-# 1. Purpose and scope of this document
+# 1. Purpose, scope, and derivation discipline
 
 Ring is developed specification-first: normative product meaning precedes
 invariant derivation, architecture, and mechanism selection. This document
@@ -233,6 +235,223 @@ This document is itself subject to the discipline it describes: a change to
 this Product Intent must be explicit, attributable to accepted authority, and
 explainable as a revision. The repository `README.md` is subordinate to this
 specification.
+
+## 1.1 Derivation integrity
+
+Future Ring invariants and their necessary consequences MUST be accepted and
+maintained under a derivation-integrity discipline. A collection of
+individually plausible invariants is not sufficient; the specification must
+remain a coherent closure of what has been accepted. The discipline consists of
+three properties, defined in §1.2 through §1.4 and kept explicitly distinct:
+
+```text
+DERIVATION VALIDITY
+Does this invariant actually follow from accepted premises?
+
+JOINT CONSISTENCY
+Can all simultaneously applicable invariants hold together?
+
+CLOSURE COHERENCE
+Have all materially relevant necessary consequences been accounted for,
+including consequences produced by changes to accepted premises?
+```
+
+These three properties MUST NOT be collapsed into a single generic notion such
+as "consistency". They answer different questions, and each can fail while the
+others hold.
+
+For the purposes of this section, in addition to the terms already defined in
+§2:
+
+- **Accepted premise**: a statement the Ring normative specification currently
+  accepts and that may participate in derivation — the Product Intent (§0),
+  an accepted semantic decision, an accepted derived invariant, or an accepted
+  applicability condition. Whether and how such acceptance is recorded is not
+  specified by this document.
+- **Context**: an identified class of repository states or transitions for
+  which the applicability and joint satisfiability of normative statements are
+  evaluated.
+- **Applicability**: the conditions under which a normative statement is in
+  force for a given context. A statement is applicable in a context when the
+  context satisfies those conditions.
+- **Admissible context**: a context that satisfies the applicability conditions
+  of all normative statements under consideration, so that those statements are
+  simultaneously in force. This is a contextual sense, distinct from the
+  relational admissibility of repository states defined in §2.
+- **Necessary consequence**: a statement that holds in every logically possible
+  realization that satisfies the accepted premises.
+- **Derivation closure**: the accepted premises together with the necessary
+  consequences the specification accounts for, including the justifications
+  connecting derived statements to those premises. Closure coherence (§1.4)
+  determines which consequences must be accounted for; it does not require
+  enumerating every logically derivable proposition.
+
+This discipline establishes no Ring invariant, obligation, architecture,
+component, representation, or mechanism, and selects no implementation
+mechanism. It constrains how later derivation proceeds.
+
+## 1.2 Derivation validity
+
+Every accepted derived Ring invariant MUST be justified by either:
+
+```text
+the Product Intent alone
+
+or
+
+the Product Intent together with already accepted derived premises whose own
+derivation is valid
+```
+
+An invariant MUST NOT become normative merely because it is convenient, matches
+an existing implementation, appeared in proto-ring, is conventional
+software-engineering practice, was suggested by an agent, is used by another
+project, or seems desirable.
+
+For every candidate invariant there MUST be a defensible derivation path back
+to accepted normative premises. A candidate for which no such path can be
+produced is at most a proposal; it is not an accepted Ring invariant.
+
+A derivation may involve intermediate consequences. Those consequences need not
+become separately named invariants unless clarity, governance, or later
+reasoning requires it.
+
+## 1.3 Joint consistency
+
+For every admissible context C, the set of Ring invariants applicable in C MUST
+admit at least one state or transition that satisfies them jointly:
+
+```text
+applicable_invariants(C) must admit at least one state or transition
+that satisfies them jointly
+```
+
+It is NOT required that every invariant be compatible with every other
+invariant. Invariants may have mutually exclusive scopes or applicability
+conditions. Explicit supersession and mutually exclusive scope do not by
+themselves constitute inconsistency. In particular, if `INV-A` requires `X`
+and `INV-B` forbids `X`, the specification is inconsistent only when `INV-A`
+and `INV-B` can apply simultaneously.
+
+A specification state is invalid if simultaneously applicable Ring invariants
+require mutually impossible outcomes. Joint consistency is therefore a property
+of each admissible simultaneously applicable set of invariants, not of
+arbitrary invariant pairs.
+
+## 1.4 Closure coherence
+
+The accepted Ring specification MUST remain coherent under the necessary
+consequences of its Product Intent, accepted decisions, and derived invariants:
+
+```text
+accepted premises
+→ necessary consequences
+→ coherent closure
+```
+
+A necessary consequence that materially affects any of the following MUST NOT
+be silently ignored merely because it has not yet been written as a named
+invariant:
+
+```text
+Ring semantics
+applicability of obligations
+transition admissibility
+consistency of the specification
+responsibility boundaries
+later architectural requirements
+```
+
+Closure coherence does NOT require Ring to enumerate every logically derivable
+proposition; that would be unbounded and is not the requirement. The requirement
+is instead that no necessary consequence relevant to the governed specification
+be omitted from consideration when that omission could change conformance,
+admissibility, consistency, or downstream derivation.
+
+A consequence may be represented explicitly, remain mechanically entailed by a
+stronger canonical statement, or otherwise be accounted for without becoming a
+separately named invariant. The representation mechanism is deliberately not
+selected by this specification.
+
+## 1.5 Re-evaluation under premise change
+
+A change to any accepted premise that participates in derivation — including
+the Product Intent, an accepted semantic decision, a derived invariant, or an
+applicability condition — MUST cause the affected derivation closure to be
+reconsidered:
+
+```text
+accepted premise change
+        ↓
+re-evaluate affected derivations
+        ↓
+identify:
+  newly necessary consequences
+  consequences no longer justified
+  changed applicability
+  contradictions
+        ↓
+restore coherent closure
+```
+
+A premise change MUST NOT leave the normative corpus containing stale derived
+meaning or silently missing newly necessary meaning.
+
+No algorithm for dependency tracking or incremental recomputation is specified,
+and no mechanism — graph, theorem prover, formal method, database, file, or
+agent — is selected by this requirement. The semantic requirement is that the
+affected derivations be reconsidered and coherent closure restored.
+
+## 1.6 Necessity test for candidate invariants
+
+For a proposed invariant `I`, a useful validation question is whether there
+exists a logically possible realization that satisfies the accepted Ring
+Product Intent and all already applicable accepted invariants while violating
+`I`:
+
+```text
+PI + accepted applicable invariants + ¬I
+```
+
+If such a realization remains possible, then `I` has not yet been shown to be a
+necessary invariant of the current premises. If no such realization is
+possible, `I` is a candidate necessary consequence of the accepted premises.
+
+This is a derivation test, not a mandate for a particular formal solver or
+notation. It supports derivation validity; it does not by itself prove
+correctness or completeness, and it does not replace the other properties in
+this section.
+
+## 1.7 Relationship to the Product Intent
+
+This discipline is required by the current Product Intent rather than being a
+new, independent product goal. If Ring itself allowed unsupported,
+contradictory, stale, or materially incomplete governing invariants, Ring could
+itself create the kind of silent semantic drift and unexplained repository
+evolution that its Product Intent exists to prevent. The failure modes map
+directly onto the three properties:
+
+```text
+unsupported governing invariants     → derivation validity
+contradictory governing invariants   → joint consistency
+stale or no-longer-justified meaning → closure coherence and re-evaluation
+silently missing necessary meaning   → closure coherence and re-evaluation
+```
+
+Derivation integrity is therefore a consequence of the current Product Intent.
+The Product Intent is not extended, weakened, or restated by this section, and
+the core statement in §0 remains its governing statement.
+
+## 1.8 Self-application of the discipline
+
+The Ring normative specification itself MUST obey this derivation discipline as
+it evolves. Otherwise, later invariants could cease to be valid consequences of
+the Product Intent, and the specification would lose the coherent closure that
+this discipline requires.
+
+This statement is narrow. It does not decide the open question of whether Ring
+governs its own repository (§3), and it derives no general self-hosting or
+self-governance architecture.
 
 # 2. Working definitions
 
