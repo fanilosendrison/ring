@@ -171,17 +171,45 @@ down, implemented, conventional, or suggested by an agent. How acceptance is
 authenticated, recorded, stored, represented, or discovered is not specified by
 this document, and no authority hierarchy implementation is assumed.
 
+Ring Product Intent §0.1A now fixes one authority boundary that this
+methodology must preserve: product-level underdetermination is not ordinary
+agent implementation freedom. The agentic development system does not acquire
+authority to establish or revise Ring Product Intent merely by developing the
+repository.
+
+When accepted Product Intent leaves materially different product-level meanings
+or guarantees genuinely underdetermined, the unresolved choice must return to
+the human Product Intent authority as a Product Intent clarification or
+revision.
+
+When the remaining alternatives differ only within genuine implementation
+freedom, the agentic development system may choose a realization without
+claiming that the selected alternative was a necessary Product Intent
+consequence. If that choice is recorded because later repository evolution
+depends on it, its status as an implementation choice must remain
+distinguishable from a derived Product Intent consequence.
+
 Non-normative illustration of specification development:
 
 ```text
-PI permits A or B.
+CASE 1 — product-level underdetermination
 
-An authorized semantic decision selects A.
+PI permits A or B,
+and A versus B changes product-level meaning or a required product guarantee.
 
-A does not need to be derivable from the Product Intent.
+→ the agentic development system does not silently choose
+→ the human Product Intent authority clarifies or revises Product Intent
+→ derivation continues from the newly accepted Product Intent
 
-If A necessarily implies C, then C may be a derived consequence of the
-accepted premise set {PI, decision A}.
+
+CASE 2 — genuine implementation freedom
+
+accepted governing premises permit A or B,
+and A versus B does not change accepted product-level meaning or guarantees.
+
+→ the agentic development system may choose A
+→ the choice may be recorded where later repository evolution depends on it
+→ A must not be represented as a necessary consequence merely because it was chosen
 ```
 
 ## 5. Derivation validity
@@ -395,6 +423,18 @@ weakening, or restatement of the Product Intent; the core statement in
 `ring-spec.md` §0 remains the governing product statement, and this document
 establishes no Ring product requirement.
 
+The same discipline must preserve the interaction boundary established by
+Ring Product Intent §0.1A. Agentic repository administration may realize
+accepted meaning and choose within genuine implementation freedom, but it must
+not convert agent preference, convention, or implementation convenience into
+new product-level authority.
+
+Conversely, ordinary mechanically governable repository administration must not
+be escalated to the human Product Intent authority merely because the repository
+lacks an explicit or usable governance representation. Such an escalation would
+confuse a governance-mechanism deficiency with genuine product-level
+underdetermination.
+
 ## 11. Self-application
 
 The Ring normative specification itself MUST be maintained under this
@@ -409,6 +449,15 @@ Section 0.11 establishes that Ring must be able to govern the evolution of its
 own repository. This methodology document still does not derive or select any
 bootstrap, self-hosting, versioning, trust, verification, migration, or
 implementation mechanism for doing so.
+
+Eventual self-application must also preserve §0.1A's human/agent boundary:
+Ring Product Intent revisions remain attributable to the human Product Intent
+authority, while ordinary mechanically governable maintenance of the Ring
+repository under accepted intent must not require the human to become its
+governance operator.
+
+This statement selects no bootstrap, repository layout, decision-record format,
+or agent implementation.
 
 ## 12. Product boundary note (non-normative)
 
@@ -522,6 +571,13 @@ durable provenance
 
 transition admissibility / explainability
 → §0.1 / §0.6
+
+human Product Intent authority / agent-administered repository evolution
+→ §0.1A
+
+governance determinability without human or agent memory as the routine
+administration mechanism
+→ §0.1A / §0.8 / §0.10
 ```
 
 The next derivation phase does not re-test whether these Product Intent
@@ -572,6 +628,11 @@ theorem proving
 machine-checkable proof evidence
 the boundary between Ring responsibilities and external reasoning or
   verification systems
+which concrete repository-governance structures are necessary to realize the
+  agent-administered interaction model
+whether deterministic agent administration requires any canonical governance
+  bootstrap, representation, or repository-governance layout
+how such governance state is represented, located, interpreted, and maintained
 ```
 
 These remain open questions for later derivation work, not assumptions of this
