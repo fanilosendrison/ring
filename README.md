@@ -21,6 +21,16 @@ repository administration is an agentic-system responsibility; genuinely
 underdetermined product-level meaning returns to the human Product Intent
 authority rather than being silently decided by an agent.
 
+Ring is intended to be the agent-facing repository-governance interface for that
+administration. An agentic development system must be able to use Ring to
+bootstrap governance for a repository, inspect its current governance, check
+conformance, distinguish mechanically remediable state from authority-required
+meaning, apply mechanically determined governance maintenance or remediation,
+and validate the exact resulting repository state.
+
+The concrete API, CLI, protocol, module structure, and repository-governance
+layout remain later derivation questions.
+
 This repository currently contains Ring's initial Product Intent
 specification together with the development methodology used to derive and
 maintain it. Ring is developed specification-first:
