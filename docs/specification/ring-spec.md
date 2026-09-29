@@ -100,6 +100,85 @@ Ring is not thereby the coding agent or the authority that chooses Product
 Intent. Its responsibility remains the integrity of repository evolution
 relative to accepted authority.
 
+## 0.1B Ring as the agent-facing repository-governance interface
+
+The agentic development system MUST be able to use Ring as the governed
+interface through which it administers repository governance under accepted
+Product Intent.
+
+Ring MUST NOT be only a passive checker whose diagnostics leave the agentic
+development system responsible for reconstructing and manipulating Ring
+governance through undocumented internal representation, repository-specific
+convention, or agent memory when the required administration is mechanically
+governable.
+
+Ring MUST make it possible for the agentic development system to perform the
+following governance capabilities:
+
+```text
+establish Ring governance for a repository that is not yet Ring-governed
+
+inspect the repository's current governing state
+
+determine the authorities, obligations, representations, and other governance
+state that currently apply
+
+evaluate whether the exact current repository state conforms to that governance
+
+obtain explicit diagnostics for non-conformance or unresolved governance state
+
+distinguish mechanically remediable conditions from conditions that require
+additional accepted authority
+
+establish or restore conformance when the required change is fully determined
+by already accepted governing premises
+
+maintain and update governance state as accepted repository evolution occurs
+
+perform the mechanically determined governance mutations required to keep that
+governance state current
+
+validate the exact resulting repository state and make its conformance,
+non-conformance, or unresolved status explainable
+```
+
+Establishing Ring governance includes bootstrapping a new repository and
+bringing an existing repository under Ring governance. Bootstrap MUST NOT
+silently invent Product Intent, rewrite existing governed meaning, or resolve a
+product-level choice that remains underdetermined by accepted authority.
+
+When a mechanically determined governance change is required, the agentic
+development system MUST be able to perform that administration through Ring
+without depending on undocumented knowledge of Ring's internal representation
+or manually reproducing Ring's governance rules outside Ring.
+
+When restoring or maintaining conformance would require choosing among
+materially different product-level meanings or guarantees, Ring MUST preserve
+the condition as authority-required rather than silently selecting the missing
+meaning.
+
+The agent-facing governance boundary MUST expose operations and results with
+enough structure for the agentic development system to distinguish at least:
+
+```text
+observed governance state
+diagnosed conformance state
+mechanically determined governance change
+authority-required unresolved choice
+applied governance mutation
+resulting validated state
+```
+
+This requirement establishes an explicit and machine-usable product boundary.
+It does not select whether that boundary is implemented as a programming-
+language API, command-line interface, protocol, service, library, command set,
+or another mechanism. It also does not select operation names, module layout,
+serialization, storage, transaction semantics, or repository layout.
+
+Ring remains the repository-governance system used by the agentic development
+system. It does not thereby become the coding agent, the Product Intent
+authority, or the system entitled to invent unresolved product meaning.
+
 ## 0.2 Product shorthand: controlled evolution without silent drift
 
 ```text
@@ -213,6 +292,17 @@ Which governed facts are necessary consequences and which are accepted
 implementation choices within remaining implementation freedom?
 Can an authorized agent determine the repository's current governance without
 requiring a human to reconstruct or operate that governance state?
+Can Ring establish the required governance for this repository without
+inventing product meaning?
+
+What part of any current non-conformance is mechanically remediable through
+Ring, and what part remains blocked on accepted authority?
+
+What governance state would Ring change, or did Ring change, to establish or
+preserve conformance?
+
+Does the exact resulting repository state conform after that governance
+operation?
 ```
 
 These questions state the required explainability. They are not a required
@@ -267,6 +357,12 @@ deterministic, mechanically interpretable, or resistant to silent drift.
 Whether any canonical governance form is necessary, and what it would contain,
 remain derivation questions rather than Product Intent assumptions.
 
+Requiring Ring to provide an agent-facing governance interface does not select a
+particular software interface or implementation architecture. The Product
+Intent requires the capability boundary and the agent experience; the concrete
+API, CLI, protocol, service boundary, module structure, and implementation
+mechanism remain subject to later derivation.
+
 ## 0.10 Product-intent conformance rule
 
 A repository, architecture, tool, convention, or process does not conform to
@@ -288,6 +384,18 @@ mechanically administer.
 
 Returning a genuinely underdetermined product-level choice to the human Product
 Intent authority is not such a failure. It is the required authority boundary.
+
+A Ring realization is also non-conformant if it can identify mechanically
+governable repository-governance state but requires the agentic development
+system to bypass Ring and reconstruct or hand-edit Ring's undocumented internal
+governance representation in order to bootstrap governance, maintain it, apply
+a mechanically determined remediation, or validate the resulting governed
+state.
+
+A Ring realization MAY require external Product Intent authority when
+conformance cannot be established without resolving genuinely underdetermined
+product-level meaning. That condition must remain explicitly distinguishable
+from mechanically remediable non-conformance.
 
 ## 0.11 Ring must be able to govern its own evolution
 
@@ -315,6 +423,17 @@ changes to Ring Product Intent remain attributable to the human Product Intent
 authority, while ordinary mechanically governable repository administration
 under accepted Ring Product Intent must be capable of being performed by the
 agentic development system without making the human the governance operator.
+
+Eventual Ring self-governance MUST also exercise the same agent-facing
+governance capability required for another governed repository. Ring's own
+repository must be capable of being inspected, maintained, brought back into
+mechanically determinable conformance, and validated through the same Ring
+governance boundary rather than through an undocumented Ring-specific
+administration path.
+
+This requirement does not require Ring to bootstrap its own first historical
+state without a bootstrap boundary; the concrete self-bootstrap and migration
+mechanism remains a later derivation question.
 
 It does not select the bootstrap path, versioning model, trust root,
 verification arrangement, software architecture, or implementation mechanism by
@@ -386,6 +505,21 @@ and do not select a representation, artifact, tool, process, or system.
   create, locate, maintain, synchronize, validate, and evolve repository and
   governance representations under accepted governing meaning. Repository
   administration is not itself Product Intent authority.
+- **Agent-facing governance interface**: the Ring-provided machine-usable
+  boundary through which the agentic development system establishes, inspects,
+  maintains, modifies, diagnoses, and validates repository governance under
+  accepted authority. The term does not select an API technology, protocol,
+  command surface, or implementation architecture.
+- **Governance bootstrap**: establishment of the Ring governance required for a
+  repository that is not yet Ring-governed, whether the repository is new or
+  already contains software and repository history. Bootstrap may materialize
+  governance consequences already determined by accepted authority; it does
+  not create Product Intent authority or permit Ring to invent unresolved
+  product meaning.
+- **Mechanically determined remediation**: a governance change whose required
+  result is fully fixed by already accepted governing premises and mechanically
+  establishable current state. It excludes any change that requires choosing
+  among materially different unresolved product-level meanings or guarantees.
 - **Obligation**: a requirement on repository state or on a transition, arising
   from accepted authority. An obligation may be structural (a property that
   must hold) or procedural (a step that must occur or an artifact that must
@@ -439,6 +573,18 @@ how the agentic development system deterministically locates and interprets
   the governing authority, obligations, and representations it must administer
 which repository-administration choices are necessary consequences of accepted
   governing premises and which remain genuine implementation freedom
+the concrete agent-facing interface technology through which Ring capabilities
+  are exposed, including whether the realization is an API, CLI, protocol,
+  service, library, command set, or composition of these
+how bootstrap, inspection, diagnosis, remediation, mutation, maintenance, and
+  validation capabilities are decomposed into clear and composable operations
+what public type, result, error, and status model makes those operations safe
+  and unambiguous for agentic consumers
+how proposed or mechanically determined changes are represented before mutation
+how mutation atomicity, idempotence, recovery, concurrency, and partial failure
+  are handled
+how governance bootstrap for an existing repository preserves accepted existing
+  meaning without inventing missing authority
 whether any mechanism from related or prior experiments is useful
 ```
 
