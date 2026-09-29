@@ -42,10 +42,69 @@ an informal convention.
 The resulting repository state MUST retain sufficient durable provenance to
 explain how and why it follows from accepted prior state and accepted changes.
 
+## 0.1A Human Product Intent and agent-administered repository evolution
+
+The governing human interaction for a Ring-governed software repository is to
+establish and evolve Product Intent.
+
+Ordinary repository administration under accepted Product Intent MUST NOT
+require the human to operate the repository's governance machinery. The human
+MUST NOT be required merely to locate governing artifacts, choose arbitrary
+governance locations or organization, remember governance relationships,
+synchronize derived representations, reconstruct validation membership, or
+manually explain current governance state when those responsibilities are
+mechanically governable and do not change Product Intent.
+
+The agentic development system is responsible for carrying accepted Product
+Intent forward into repository evolution. This includes deriving necessary
+consequences, maintaining the repository representations and obligations needed
+to govern that evolution, making and durably recording choices that remain
+within genuine implementation freedom when future evolution depends on them,
+implementing resulting changes, validating mechanically governable obligations,
+and keeping mechanically governable governance state current.
+
+This responsibility does not transfer Product Intent authority to the agentic
+development system. An agent MUST NOT silently convert an underdetermined
+product-level choice into governing product meaning.
+
+When materially relevant alternatives differ in product-level meaning,
+user-visible guarantees, or Product Intent and the accepted Product Intent does
+not determine the choice, the unresolved choice MUST be returned to the human
+Product Intent authority as an explicit clarification or revision of Product
+Intent.
+
+When alternatives differ only within genuine implementation freedom left by the
+accepted governing premises, the agentic development system MAY select among
+them without requiring a human Product Intent decision. Such a choice MAY become
+a durable repository decision where future evolution needs that decision, but
+it MUST NOT be represented as a necessary consequence of Product Intent merely
+because an agent selected it.
+
+The intended authority and administration boundary is:
+
+```text
+human
+→ establishes and evolves Product Intent
+
+agentic development system
+→ derives and administers repository evolution under accepted Product Intent
+→ selects only within genuine implementation freedom
+→ returns genuine product-level underdetermination to the human authority
+
+Ring
+→ preserves controlled, attributable, explainable repository evolution
+  across that boundary without silent drift
+```
+
+Ring is not thereby the coding agent or the authority that chooses Product
+Intent. Its responsibility remains the integrity of repository evolution
+relative to accepted authority.
+
 ## 0.2 Product shorthand: controlled evolution without silent drift
 
 ```text
-controlled repository evolution
+controlled agent-administered repository evolution
+from human Product Intent
 without silent drift
 ```
 
@@ -99,6 +158,13 @@ process / obligation drift
   The obligations that applied to a transition, or the process by which they
   were discharged, can no longer be determined, or current practice silently
   diverges from the applicable obligation set.
+
+governance-state drift
+  The agentic development system can no longer determine unambiguously what
+  governing authority, obligations, or representations apply to the current
+  repository state, or must reconstruct that governance from human memory,
+  agent memory, undocumented convention, duplicated state, assumed location,
+  or other untracked context.
 ```
 
 ## 0.5 Continuity of authority and explainability
@@ -142,6 +208,11 @@ Which prior decision was preserved, amended, or superseded?
 Which obligations applied to this transition?
 Which dependent representations or artifacts had to change?
 What durable evidence establishes that the resulting state is coherent?
+Which Product Intent currently governs this repository?
+Which governed facts are necessary consequences and which are accepted
+implementation choices within remaining implementation freedom?
+Can an authorized agent determine the repository's current governance without
+requiring a human to reconstruct or operate that governance state?
 ```
 
 These questions state the required explainability. They are not a required
@@ -152,8 +223,11 @@ interface, query language, or artifact schema.
 Mechanical verifiability is required where an obligation is mechanically
 governable. An obligation does not become mechanically governable merely because
 Ring exists, and this Product Intent does not require mechanizing obligations
-that are inherently judgment-based. It does require that mechanically governable
-obligations not be left to agent memory or informal interpretation.
+that are inherently judgment-based.
+It does require that mechanically governable obligations and mechanically
+governable repository-administration responsibilities not be left to human
+memory, agent memory, informal interpretation, undocumented convention, or
+manual reconstruction.
 
 Durable provenance is likewise a supporting requirement, not the product. It
 exists so that repository evolution remains explainable and continuity of
@@ -172,7 +246,9 @@ a coding agent
 a workflow / orchestration engine
 a replacement for Git
 a project / task manager
-a requirement that every repository use the same governance structure
+a requirement that every repository use the same product architecture,
+source-code layout, programming language, framework, build system, or
+implementation structure
 ```
 
 Ring does not own a governed project's product semantics and does not determine
@@ -181,6 +257,15 @@ to change them. Those authorities remain outside Ring's authority and are
 established by the governed project's own accepted authority model. Ring's
 concern is the integrity of repository evolution relative to that accepted
 authority.
+
+This Product Intent does not itself select a governance representation, file
+format, artifact model, bootstrap mechanism, or repository-governance layout.
+
+It also does not prohibit later derivation of a canonical governance form if
+such a form is necessary to make agent-administered repository evolution
+deterministic, mechanically interpretable, or resistant to silent drift.
+Whether any canonical governance form is necessary, and what it would contain,
+remain derivation questions rather than Product Intent assumptions.
 
 ## 0.10 Product-intent conformance rule
 
@@ -193,6 +278,16 @@ authority.
 Conversely, conformance is not established by immutability, by documentation
 volume, or by the presence of any particular artifact. The requirement is
 controlled, explainable evolution relative to accepted authority.
+
+A repository, architecture, tool, convention, or process is also
+non-conformant if ordinary mechanically governable repository administration
+under established Product Intent requires the human to act as the routine
+governance operator merely to locate, reconstruct, synchronize, or maintain
+governance state that an authorized agentic development system could
+mechanically administer.
+
+Returning a genuinely underdetermined product-level choice to the human Product
+Intent authority is not such a failure. It is the required authority boundary.
 
 ## 0.11 Ring must be able to govern its own evolution
 
@@ -214,6 +309,12 @@ because it belongs to Ring. Any evidence relied upon must have the authority,
 scope, and independence actually required by the obligation it supports.
 
 This Product Intent requires eventual self-governance.
+
+That eventual self-governance MUST preserve the same human/agent boundary:
+changes to Ring Product Intent remain attributable to the human Product Intent
+authority, while ordinary mechanically governable repository administration
+under accepted Ring Product Intent must be capable of being performed by the
+agentic development system without making the human the governance operator.
 
 It does not select the bootstrap path, versioning model, trust root,
 verification arrangement, software architecture, or implementation mechanism by
@@ -265,9 +366,26 @@ and do not select a representation, artifact, tool, process, or system.
 - **Authority**: the source a repository accepts as making a change to governed
   meaning binding. Authority may be a person, role, policy, accepted decision,
   or another accepted source. Ring does not decide who or what holds authority.
+- **Product Intent authority**: the human authority entitled to establish and
+  evolve the product-level Product Intent. Ring may preserve and govern the
+  effects of that authority but does not acquire it.
+- **Agentic development system**: the agent or cooperating agentic mechanisms
+  responsible for deriving, administering, implementing, validating, and
+  evolving the repository under accepted governing premises. Operating the
+  repository does not by itself grant this system Product Intent authority.
 - **Accepted change / decision**: a change to governed meaning that is
   attributable to accepted authority, as opposed to one that emerges from
   implementation activity, memory, duplication, or assumption.
+- **Genuine implementation freedom**: a remaining choice among realizations
+  whose alternatives do not differ in accepted product-level meaning or
+  required product guarantees under the currently applicable governing
+  premises. The agentic development system may choose within this freedom
+  without converting the choice into a claimed necessary consequence of
+  Product Intent.
+- **Repository administration**: the mechanically governable work required to
+  create, locate, maintain, synchronize, validate, and evolve repository and
+  governance representations under accepted governing meaning. Repository
+  administration is not itself Product Intent authority.
 - **Obligation**: a requirement on repository state or on a transition, arising
   from accepted authority. An obligation may be structural (a property that
   must hold) or procedural (a step that must occur or an artifact that must
@@ -314,6 +432,13 @@ the relationship between Ring and any version-control, hosting,
 any file format, schema, API, package structure, language, or repository layout
 how Ring's required self-application to its own repository is bootstrapped and
   realized, including any versioning, trust, verification, or migration boundary
+what canonical governance form, bootstrap surface, or
+  repository-governance layout, if any, is necessary for deterministic
+  agent-administered repository evolution
+how the agentic development system deterministically locates and interprets
+  the governing authority, obligations, and representations it must administer
+which repository-administration choices are necessary consequences of accepted
+  governing premises and which remain genuine implementation freedom
 whether any mechanism from related or prior experiments is useful
 ```
 
