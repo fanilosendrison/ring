@@ -435,6 +435,20 @@ lacks an explicit or usable governance representation. Such an escalation would
 confuse a governance-mechanism deficiency with genuine product-level
 underdetermination.
 
+Ring Product Intent §0.1B also establishes that Ring is the agent-facing
+repository-governance interface rather than merely a passive observer of
+governance state.
+
+Later derivation may choose the concrete API or implementation architecture,
+but it must not weaken the accepted product boundary into a design where Ring
+reports mechanically governable drift and then requires the agentic development
+system to recreate Ring governance manually outside Ring.
+
+The Product Intent requirement to bootstrap, inspect, diagnose, maintain,
+remediate, mutate, and validate governance does not authorize Ring to make a
+missing product-level decision. Derivation must preserve the distinction
+between mechanically determined administration and authority-required meaning.
+
 ## 11. Self-application
 
 The Ring normative specification itself MUST be maintained under this
@@ -458,6 +472,14 @@ governance operator.
 
 This statement selects no bootstrap, repository layout, decision-record format,
 or agent implementation.
+
+Self-application must eventually exercise §0.1B's agent-facing governance
+boundary as well. A Ring-only hidden administration path would not demonstrate
+that the product capability required for another governed repository is
+sufficient for Ring's own repository.
+
+This statement still selects no concrete API, CLI, bootstrap artifact,
+repository layout, or implementation mechanism.
 
 ## 12. Product boundary note (non-normative)
 
@@ -578,6 +600,17 @@ human Product Intent authority / agent-administered repository evolution
 governance determinability without human or agent memory as the routine
 administration mechanism
 → §0.1A / §0.8 / §0.10
+
+Ring as the agent-facing repository-governance interface
+→ §0.1B
+
+governance bootstrap, inspection, conformance diagnosis, mechanically
+determined remediation, maintenance, mutation, and resulting-state validation
+→ §0.1B / §0.10
+
+authority-required unresolved meaning remains distinct from mechanically
+remediable governance state
+→ §0.1A / §0.1B / §0.10
 ```
 
 The next derivation phase does not re-test whether these Product Intent
@@ -633,6 +666,14 @@ which concrete repository-governance structures are necessary to realize the
 whether deterministic agent administration requires any canonical governance
   bootstrap, representation, or repository-governance layout
 how such governance state is represented, located, interpreted, and maintained
+the concrete public Ring API / CLI / protocol realization
+the modular decomposition of bootstrap, inspection, conformance, diagnosis,
+  remediation, mutation, maintenance, and validation capabilities
+the public result and error model for agentic consumers
+whether and how read-only inspection, proposed changes, and actual mutation are
+  represented as separate or composable operations
+the transaction, idempotence, concurrency, recovery, and partial-failure model
+  of mutating governance operations
 ```
 
 These remain open questions for later derivation work, not assumptions of this
