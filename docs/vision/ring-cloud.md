@@ -61,10 +61,25 @@ necessary, future accepted product decisions.
 
 The candidate future product intent is:
 
-> **Ring Cloud exists to turn the longitudinal history of Ring-governed
-> software evolution into usable knowledge about how agentic development
-> systems preserve, violate, diagnose, and restore governed software
-> properties over time.**
+> **Ring Cloud exists to preserve and exploit longitudinally development truth
+> structured by governance at the time it is observable, in order to produce
+> knowledge about agentic failures, diagnostics, and corrections that does not
+> depend on after-the-fact reconstruction.**
+
+The distinctive input to Ring Cloud is therefore not merely execution
+telemetry. It is governed observation: development facts whose meaning,
+applicability, provenance, and relationship to governed repository state were
+established at the time of observation where Ring independently provides those
+distinctions.
+
+The purpose is not to claim an absolute or omniscient truth about software
+development. The relevant truth is bounded by what Ring actually knows,
+observes, determines, or leaves unresolved under the governance semantics that
+independently apply at that boundary.
+
+Longitudinal value comes from preserving those governed observations and their
+relationships across time rather than attempting to infer an equivalent history
+later from mutable repository state or unstructured execution traces.
 
 A useful Ring Cloud should make it possible for authorized users and systems to
 learn from governed evolution across multiple transitions, executions,
@@ -220,12 +235,54 @@ genuinely underdetermined product choice
 
 The existence of Ring Cloud is therefore not itself derivation evidence.
 
-## 6. Longitudinal governed data versus ordinary logs
+### Captured governed observation versus later reconstruction
 
-The valuable future Ring Cloud object is not assumed to be a conventional
+A captured governed observation is not equivalent to a later reconstructed
+interpretation:
+
+```text
+captured governed observation
+≠
+later reconstructed interpretation
+```
+
+A later system may possess repository history, execution logs, current
+governance declarations, and the final repository state without being able to
+establish with equivalent authority what was true at the original governance
+boundary.
+
+Depending on the independently derived Ring semantics available at that time,
+information that may be lost or become ambiguous can include:
+
+```text
+which governance was applicable
+which exact state was being observed
+which authority or responsibility governed the evaluation
+what Ring actually observed
+what result Ring actually established
+what remained unknown or undetermined
+which diagnostic relationship Ring actually established
+which remediation was mechanically determined, if any
+```
+
+This does not establish that Ring must expose, persist, or separately represent
+every item in that list.
+
+The relevant future question is whether a fact that Ring independently needs
+and actually possesses at a governance boundary can later be reconstructed with
+equivalent meaning and authority after the original state and context have
+changed.
+
+Where equivalent reconstruction is not possible, later inference from logs or
+repository history is not a semantic substitute for an observation captured at
+the original governed boundary.
+
+## 6. Governed observations as a distinct longitudinal data asset
+
+The valuable future Ring Cloud input is not assumed to be a conventional
 application log.
 
-Ordinary logs may say:
+Ordinary execution telemetry may record:
 
 ```text
 agent changed file
@@ -234,25 +291,100 @@ agent changed another file
 command passed
 ```
 
-The candidate Ring Cloud opportunity is richer because Ring may be able to
-expose governed distinctions such as:
+That history records activity, but it does not by itself establish the
+governance meaning of the activity.
+
+Where Ring independently derives and exposes the required distinctions, a
+governed observation may instead preserve relationships such as:
 
 ```text
-exact state S0
+exact governed state S0
 → candidate transition
-→ exact state S1
-→ obligation O became VIOLATED
+→ exact governed state S1
+→ applicable obligation O
+→ O changes from SATISFIED to VIOLATED
 → governed diagnostic D
-→ remediation transition
-→ exact state S2
-→ obligation O became SATISFIED
+→ attempted remediation R1
+→ O remains VIOLATED
+→ attempted remediation R2
+→ exact governed state S2
+→ O becomes SATISFIED
 ```
 
-If Ring independently derives and exposes such distinctions, Ring Cloud may
-preserve their relationships longitudinally rather than attempting to infer
-them later from unstructured execution logs.
+The strategic product distinction is semantic rather than merely volumetric.
+More logs do not automatically produce an equivalent governed history.
 
-This section does not define a data model.
+A governed longitudinal observation may have properties such as:
+
+```text
+SEMANTICALLY STRUCTURED
+→ the observation is interpreted through governance that actually applied at
+  the relevant boundary rather than being assigned semantic meaning later from
+  raw activity alone
+
+EXACT-STATE-BOUND
+→ the observation can remain related to the exact governed state to which the
+  result applied where Ring independently provides such state identity
+
+FAILURE-LOCALIZING
+→ successive governed states can identify the transition at which a governed
+  property first becomes violated, unresolved, or restored where the governing
+  semantics make that distinction observable
+
+LONGITUDINAL
+→ violation, diagnosis, attempted remediation, insufficient repair, restored
+  conformance, and later regression can remain related across time where those
+  relationships are actually established
+```
+
+These are candidate properties of Ring Cloud input, not pre-accepted Ring
+requirements.
+
+### Observation-time governance requirement
+
+Producing an equivalent governed signal generally requires more than later
+access to repository history or execution telemetry.
+
+A system must possess sufficient governance capability at the relevant
+observation time to establish the distinctions it later wants to preserve, for
+example:
+
+```text
+applicable authority
+applicable obligations
+governed subject or responsibility
+exact state binding where required
+evaluation result
+known versus unresolved state
+relevant provenance
+```
+
+This does not mean that only Ring can ever produce such information.
+
+Another system with equivalent governance semantics and sufficient
+observation-time access could potentially produce an equivalent future signal.
+
+However:
+
+```text
+equivalent future governance capability
+does not imply
+equivalent historical governed observations
+```
+
+A system deployed later can begin producing governed observations for future
+transitions.
+
+It cannot in general recreate historical governed observations that were never
+captured when the relevant original governance state, execution context,
+known-versus-unknown distinctions, or transient provenance are no longer
+available with equivalent authority.
+
+The resulting longitudinal history can therefore become qualitatively different
+from a retrospective analytics dataset assembled after the development process.
+
+This section defines no event schema, data model, identity format, persistence
+mechanism, or capture architecture.
 
 ## 7. Potential data-value layers
 
@@ -339,6 +471,39 @@ authorized datasets may improve agents, models, or development methods
         ↓
 new executions produce new governed observations
 ```
+
+Where the necessary governed information exists and the relevant use is
+explicitly authorized, a useful learning unit may therefore contain relations
+such as:
+
+```text
+governed starting state
++
+attempted transition
++
+governed violation or unresolved result
++
+bound diagnostic
++
+one or more repair attempts
++
+resulting governed states
++
+restored conformance or remaining non-conformance
+```
+
+Such a unit is materially different from a retrospectively labelled
+success/failure example when its labels and relationships were established by
+the governance system at the time they applied rather than inferred after the
+fact.
+
+This can improve failure localization and credit assignment for evaluation or
+learning systems: the relevant signal can identify not only that a final task
+failed or succeeded, but where a governed property changed status and which
+subsequent repair actually restored it.
+
+No particular training method, reward model, model provider, or learning
+algorithm is implied.
 
 The strategic interest of this loop is that development failures may become
 structured learning signals rather than remaining silent or being recoverable
