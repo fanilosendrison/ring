@@ -51,3 +51,9 @@ later derivation. This README is subordinate to that specification.
 
 `proto-ring` is a separate experiment and is not an input to Ring's Product
 Intent or its derivation.
+
+A separate non-authoritative future consideration for a possible adjacent
+[Ring Cloud](docs/vision/ring-cloud.md) product preserves the longitudinal
+governance-data opportunity and the future Ring/Ring Cloud boundary questions.
+It is not Ring Product Intent, is not an input to Ring derivation, and creates
+no Ring invariant, obligation, architecture, or mechanism.
