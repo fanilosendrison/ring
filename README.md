@@ -49,6 +49,13 @@ Ring's Product Intent and the immediate semantic distinctions required to
 interpret it; invariants, architecture, and mechanisms are deliberately left to
 later derivation. This README is subordinate to that specification.
 
+Two non-normative Product Rationale documents provide additional context:
+[Ring Product Rationale](docs/product/ring-product-rationale.md) explains the
+user problem, value, and outcomes behind Ring's existing Product Intent, while
+[Ring Cloud Product Rationale](docs/product/ring-cloud-product-rationale.md)
+explains the value proposition behind the non-authoritative Ring Cloud
+candidate. Neither document is an input to Ring derivation.
+
 `proto-ring` is a separate experiment and is not an input to Ring's Product
 Intent or its derivation.
 
