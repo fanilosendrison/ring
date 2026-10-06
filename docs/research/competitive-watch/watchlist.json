@@ -1,0 +1,380 @@
+{
+  "schema_version": 2,
+  "status": "Discovery seeds only; no competitor capability or rating is established by this list.",
+  "discovery_required": true,
+  "actors": [
+    {
+      "actor_id": "nool",
+      "name": "Nool",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "mneme",
+      "name": "Mneme",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "codespeak",
+      "name": "CodeSpeak",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "qodo",
+      "name": "Qodo",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "packmind",
+      "name": "Packmind",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "tessl",
+      "name": "Tessl",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "microsoft-agt",
+      "name": "Microsoft Agent Governance Toolkit",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "acs",
+      "name": "Agent Control Specification",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "chainloop",
+      "name": "Chainloop",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "entire",
+      "name": "Entire",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "langsmith",
+      "name": "LangSmith",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "braintrust",
+      "name": "Braintrust",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "langfuse",
+      "name": "Langfuse",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "phoenix",
+      "name": "Arize Phoenix",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "weave",
+      "name": "W&B Weave / Agent Lens",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "kiro",
+      "name": "Kiro",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "augment-intent",
+      "name": "Augment Intent",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "8090",
+      "name": "8090",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "coderabbit",
+      "name": "CodeRabbit",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "greptile",
+      "name": "Greptile",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "endor-labs",
+      "name": "Endor Labs",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "rippletide",
+      "name": "Rippletide",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "google-agent-governance",
+      "name": "Google agent governance offerings",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "github-agent-platform",
+      "name": "GitHub agent platform and governance",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "openai-codex",
+      "name": "OpenAI Codex and agent tooling",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "anthropic-claude-code",
+      "name": "Anthropic Claude Code",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "imandra",
+      "name": "Imandra / CodeLogician / SpecLogician",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "antithesis",
+      "name": "Antithesis",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "opa",
+      "name": "Open Policy Agent",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "in-toto",
+      "name": "in-toto",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "spec-kit",
+      "name": "Spec Kit",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "openspec",
+      "name": "OpenSpec",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "jama",
+      "name": "Jama Connect",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "strongdm-factory",
+      "name": "StrongDM software factory",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "prime-intellect",
+      "name": "Prime Intellect",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "swe-gym",
+      "name": "SWE-Gym",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "swe-smith",
+      "name": "SWE-smith",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "r2e-gym",
+      "name": "R2E-Gym / DeepSWE",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    },
+    {
+      "actor_id": "poolside",
+      "name": "Poolside",
+      "identity_status": "seed_unverified",
+      "official_sources": [],
+      "repository_sources": [],
+      "aliases": [],
+      "first_verified_report_id": null
+    }
+  ],
+  "discovery_topics": [
+    "repository authority and responsibility-scoped authority",
+    "obligation applicability, omitted checks, and indeterminate coverage",
+    "mutation of requirements, tests, policies, and acceptance criteria",
+    "evidence validity, currentness, provenance, and exact-state binding",
+    "admission, authorized repair, and authority-required escalation",
+    "governed observation capture and longitudinal validity",
+    "repair, failure, and escalation datasets and learning labels",
+    "agent evaluation and regression environments",
+    "coding-agent harness control and governance",
+    "available end-to-end governance and downstream compositions"
+  ],
+  "membership_policy": {
+    "automatic_removal": false,
+    "removal_authority": "explicit_user_instruction",
+    "discovery_frequency": "every_run",
+    "quiet_actor_expiry": null,
+    "active_source_refresh_target_days": 7,
+    "dormant_successor_refresh_target_days": 30,
+    "effective_roster": "Cumulative union of initial seeds, admissions from all prior reports, explicit user additions, and pending registrations recovered with verifiable references; report admissions remain authoritative historical membership even when absent from this seed file.",
+    "missed_review": "Retain actor, preserve successful cursor and due date, report overdue or deferred coverage."
+  }
+}
