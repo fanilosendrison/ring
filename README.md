@@ -16,6 +16,17 @@ accepted intent, and the repository must remain able to evolve freely without
 silently drifting from the authorities, decisions, obligations, and
 representations that govern its current state.
 
+> Passing checks is not enough if their meaning can change without accepted
+> authority. Ring is designed to distinguish restoring an existing obligation,
+> legitimately revising it, and silently weakening what the software is
+> supposed to guarantee—without making the human the permanent operator of
+> repository governance.
+
+This distinction is explained in the non-normative
+[Product Positioning and Differentiation](docs/product/positioning.md).
+It describes intended product responsibilities, not a claim that the complete
+implementation or comparative superiority has already been demonstrated.
+
 The intended human boundary is Product Intent. Ordinary mechanically governable
 repository administration is an agentic-system responsibility; genuinely
 underdetermined product-level meaning returns to the human Product Intent
@@ -64,3 +75,10 @@ A separate non-authoritative future consideration for a possible adjacent
 governance-data opportunity and the future Ring/Ring Cloud boundary questions.
 It is not Ring Product Intent, is not an input to Ring derivation, and creates
 no Ring invariant, obligation, architecture, or mechanism.
+
+The candidate Ring Cloud opportunity includes preserving these distinctions
+over time so that evaluations and learning data do not automatically label a
+weakened acceptance criterion as a successful repair.
+
+The [Competitive Guarantee Watch](docs/research/competitive-watch/README.md) is
+a dated, evidence-based research archive kept separate from product authority.
