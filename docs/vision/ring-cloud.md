@@ -514,6 +514,50 @@ This is a future product opportunity.
 It does not make model training, agent optimization, or evaluation policy a
 Ring responsibility.
 
+### Candidate downstream uses of governed learning signals
+
+Where authorized governed observations exist, candidate downstream uses may
+include:
+
+```text
+training examples for:
+- violation prediction
+- failure localization
+- repair behavior
+- authority / escalation behavior where independently established
+
+governance-aware evaluation and regression cases
+
+evaluation-case generation from real governed failures
+
+agent / model / harness comparison or routing based on governed outcomes
+
+probabilistic pre-violation risk analysis
+
+failure-mode and repair-strategy research
+
+agent-system / harness improvement
+
+model or system regression analysis
+
+authorized cross-repository aggregate analysis
+
+authorized assurance / audit / incident reconstruction
+```
+
+These are candidate downstream uses only. They depend on Ring independently
+exposing the relevant governed distinctions and create no Ring requirement.
+Statistical or learned conclusions do not become governance truth or authority,
+and they do not retroactively redefine historical Ring observations.
+
+An observation-time distinction between a mechanically remediable condition and
+an authority-required unresolved condition could itself become useful
+longitudinal signal only if Ring independently derives and exposes that
+distinction. No persistent field, schema, or representation is implied.
+
+The authorization, privacy, and data-ownership constraints in §8 remain
+applicable to every candidate use above.
+
 ## 10. Provider neutrality
 
 A valuable Ring Cloud should not require Ring to become specific to one model,

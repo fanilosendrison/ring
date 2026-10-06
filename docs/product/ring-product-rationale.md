@@ -172,6 +172,146 @@ can distinguish among:
 This lets autonomy extend to what is governed and determined without treating
 agent preference as Product Intent.
 
+### Open implementation freedom under governed consequences
+
+Ring does not need every implementation artifact, source line, abstraction,
+optimization, cache, algorithmic choice, internal structure, or other possible
+future implementation idea to be individually pre-enumerated as a governed
+object before an agent may introduce it. Under the existing Product Intent,
+agents may choose freely inside genuine implementation freedom.
+
+The important boundary is the consequence of that choice for governed meaning
+and applicable obligations:
+
+```text
+agent introduces previously unseen implementation
+        ↓
+the implementation choice itself may remain within implementation freedom
+        ↓
+its consequences are still subject to applicable governed obligations
+```
+
+A non-governed implementation element may affect a governed property. For
+example:
+
+```text
+agent introduces a cache
+→ the cache itself need not have been predeclared as a governed object
+→ the cache causes behavior to become stale
+→ an already-governed freshness/currentness property is violated
+→ the relevant governance evaluation can expose the resulting non-conformance
+```
+
+This example is explanatory only. It creates no Ring requirement about caches,
+freshness, or any particular obligation. The general product value is:
+
+```text
+the implementation space can remain open
+while governed consequences remain constrained
+```
+
+Ring therefore does not need to predict every implementation an agent might
+invent in order to preserve properties that are already governed.
+
+This capability has a necessary coverage limit. If an important property has
+not been established by accepted governing premises, is outside Ring's
+applicable governed scope, or cannot be made mechanically observable under the
+applicable obligations, Ring cannot invent knowledge of that property merely
+because an agent may have broken it. Ring does not imply that every important
+property is automatically governed.
+
+### Containment of hallucination and agent error
+
+Ring does not prevent a language model or coding agent from hallucinating. An
+agent may still:
+
+- misunderstand a repository;
+- reason from a false premise;
+- propose bad code;
+- choose a poor implementation;
+- misread an artifact; or
+- produce an incorrect candidate change.
+
+Ring changes what such wrong reasoning is allowed to silently become in the
+governed repository:
+
+```text
+agent invents a false premise
+        ↓
+implementation activity alone does not make that premise authoritative
+
+if the resulting change violates an applicable mechanically governed property
+        ↓
+the relevant conformance evaluation can expose the violation
+
+if the change requires new product-level meaning not determined by accepted
+Product Intent
+        ↓
+implementation activity does not supply the missing authority
+        ↓
+the unresolved product-level choice remains authority-required
+```
+
+These cases do not imply a universal status vocabulary.
+
+> **An agent may still be wrong; being wrong no longer has to mean silently rewriting what the software is supposed to mean.**
+
+> **Ring separates the ability to modify software from the authority to modify what the software is supposed to mean.**
+
+Both sentences are non-normative rationale shorthand for the existing Product
+Intent. They do not replace the normative specification.
+
+This is why Ring can contain an important class of consequences of agent
+hallucination and agent error:
+
+```text
+hallucination or reasoning error
+≠
+automatic new governing truth
+```
+
+The separation prevents implementation activity from silently becoming a
+revision of governed meaning and therefore directly addresses silent drift. It
+does not mean that Ring eliminates hallucinations, makes language-model
+reasoning truthful, detects every bug or semantic error, or guarantees correct
+software. Ring remains outside the role of a general correctness oracle. A bad
+implementation whose badness does not violate an applicable governed and
+mechanically observable property may remain outside Ring's ability to detect
+it.
+
+### Validation boundary rather than continuous interception
+
+Ring need not observe every filesystem write, intercept every agent action,
+provide real-time monitoring, or detect a violation at the instant it is
+introduced. The existing Product Intent instead requires support for evaluating
+the exact current repository state and validating the exact resulting
+repository state.
+
+The user-relevant containment property can therefore be rendered as:
+
+```text
+a known mechanically governable violation
+must not silently pass the relevant Ring conformance / validation boundary
+as a conforming resulting state
+```
+
+This is an explanation of the existing Product Intent, not an independently
+introduced normative requirement.
+
+```text
+bad intermediate state may exist during work
+        ↓
+relevant Ring evaluation occurs
+        ↓
+resulting governed state is conforming, non-conforming, or unresolved
+according to the Ring semantics eventually derived for that operation
+```
+
+The terms in this illustration do not establish final public status vocabulary.
+Transaction semantics, mutation atomicity, concurrency, recovery, continuous
+monitoring, and exact evaluation timing remain unresolved architecture and
+mechanism questions where the normative specification leaves them unresolved.
+
 ### Autonomous remediation without covert product decisions
 
 Mechanically determined governance remediation can be performed without asking
