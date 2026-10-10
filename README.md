@@ -39,6 +39,12 @@ conformance, distinguish mechanically remediable state from authority-required
 meaning, apply mechanically determined governance maintenance or remediation,
 and validate the exact resulting repository state.
 
+Ring does not silently turn an observed or apparently stable repository state
+into a stronger governance conclusion. A repository-state-dependent conclusion
+must be supported by the state properties actually established for it. If a
+required property cannot be established, Ring exposes that condition rather
+than claiming conformance or validation from assumption.
+
 The concrete API, CLI, protocol, module structure, and repository-governance
 layout remain later derivation questions.
 
