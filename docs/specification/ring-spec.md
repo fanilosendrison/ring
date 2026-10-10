@@ -142,6 +142,26 @@ validate the exact resulting repository state and make its conformance,
 non-conformance, or unresolved status explainable
 ```
 
+Ring may make a repository-state-dependent claim only to the strength supported
+by state properties that have actually been established for that claim.
+
+An observed repository state MUST NOT be promoted to a stronger status such as
+current, coherent, admissible, conforming, or validated merely because no drift
+was detected, equivalent observations were repeated, checks succeeded, or an
+environmental condition was assumed without sufficient establishment.
+
+When a repository-state property required for a conclusion cannot be
+established, Ring MUST preserve that condition explicitly as unresolved rather
+than silently continue from the stronger assumed state.
+
+This requirement does not require Ring always to succeed in establishing the
+required property and does not select how the property is established. The
+sufficient basis may come from Ring's observation, from an environment or
+mechanism whose guarantee is sufficient for the claim, from accepted evidence,
+or from another later-derived mechanism. The Product Intent requires the
+property to be established before reliance; it does not prescribe the
+realization.
+
 Establishing Ring governance includes bootstrapping a new repository and
 bringing an existing repository under Ring governance. Bootstrap MUST NOT
 silently invent Product Intent, rewrite existing governed meaning, or resolve a
@@ -162,6 +182,7 @@ enough structure for the agentic development system to distinguish at least:
 
 ```text
 observed governance state
+unresolved repository-state establishment
 diagnosed conformance state
 mechanically determined governance change
 authority-required unresolved choice
@@ -287,6 +308,8 @@ Which prior decision was preserved, amended, or superseded?
 Which obligations applied to this transition?
 Which dependent representations or artifacts had to change?
 What durable evidence establishes that the resulting state is coherent?
+What establishes the repository-state properties on which this current
+governance, admissibility, or conformance claim relies?
 Which Product Intent currently governs this repository?
 Which governed facts are necessary consequences and which are accepted
 implementation choices within remaining implementation freedom?
@@ -374,6 +397,13 @@ authority.
 Conversely, conformance is not established by immutability, by documentation
 volume, or by the presence of any particular artifact. The requirement is
 controlled, explainable evolution relative to accepted authority.
+
+A Ring realization is non-conformant if it treats an unestablished
+repository-state property as established current state, coherence,
+admissibility, conformance, or validation, or if it silently converts inability
+to establish a state property required for its conclusion into success. A
+property not established is not thereby false, but it remains unresolved for
+every claim that requires it.
 
 A repository, architecture, tool, convention, or process is also
 non-conformant if ordinary mechanically governable repository administration
